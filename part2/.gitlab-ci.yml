@@ -1,0 +1,9 @@
+# говорит какие задания надо запускать
+stages:
+  # в нашем случает только test
+  - test
+
+test:
+  stage: test
+  script:
+    - which nginx && nginx -v || echo "Nginx не найден"

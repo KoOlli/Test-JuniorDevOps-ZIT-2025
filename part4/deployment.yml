@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+# Тип ресурса
+kind: Deployment
+# Задали имя deployment в кластере
+metadata:
+  name: nginx
+# Спецификация, запускаем 1 копию
+spec:
+  replicas: 1
+  # Шаблон пода
+  template:
+    spec:
+      containers:
+      - name: nginx
+        # Используемый образ
+        image: nginx:stable
+        ports:
+        - containerPort: 80
